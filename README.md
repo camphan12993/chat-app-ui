@@ -1,4 +1,4 @@
-# my_chat_app
+# Chat App UI using Neumorphism design 
 
 A new Flutter project.
 
