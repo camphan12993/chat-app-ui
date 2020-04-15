@@ -32,8 +32,8 @@ class Avatar extends StatelessWidget {
             margin: EdgeInsets.all(4.0),
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                image:
-                    DecorationImage(fit: BoxFit.cover, image: AssetImage(url))),
+                image: DecorationImage(
+                    fit: BoxFit.cover, image: new NetworkImage(url))),
           ),
           isOnline
               ? Positioned(

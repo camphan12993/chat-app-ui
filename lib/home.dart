@@ -22,13 +22,13 @@ class Home extends StatelessWidget {
           Container(
             width: 64.0,
             child: Text(
-              user.name,
+              user.name.split(' ')[0],
               maxLines: 1,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                   color: textColor,
-                  fontSize: 12.0,
+                  fontSize: 14.0,
                   fontWeight: FontWeight.w600),
             ),
           )
@@ -67,7 +67,7 @@ class Home extends StatelessWidget {
                   message.sender.name,
                   style: TextStyle(
                       color: textColor,
-                      fontSize: 14.0,
+                      fontSize: 16.0,
                       fontWeight: FontWeight.w600),
                 ),
                 SizedBox(height: 2.0),
@@ -78,7 +78,7 @@ class Home extends StatelessWidget {
                         color: message.hasRead
                             ? textColor.withOpacity(.4)
                             : textColor,
-                        fontSize: 12.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.w400))
               ],
             )),
@@ -88,7 +88,7 @@ class Home extends StatelessWidget {
                   ':' +
                   formatTime('0' + message.time.minute.toString()),
               style:
-                  TextStyle(color: textColor.withOpacity(.6), fontSize: 12.0),
+                  TextStyle(color: textColor.withOpacity(.6), fontSize: 14.0),
             )
           ],
         ),
@@ -109,7 +109,8 @@ class Home extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
               child: Row(
                 children: [
                   // avatar
@@ -119,7 +120,7 @@ class Home extends StatelessWidget {
                   Text(currentUser.name,
                       style: TextStyle(
                           color: textColor,
-                          fontSize: 18.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.bold)),
                   Expanded(
                     child: Container(),
@@ -140,7 +141,8 @@ class Home extends StatelessWidget {
             ),
             // search box
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 10.0),
                 decoration: BoxDecoration(
@@ -157,13 +159,13 @@ class Home extends StatelessWidget {
                             shape: BoxShape.circle),
                         child: Icon(
                           Icons.search,
-                          size: 14.0,
+                          size: 16.0,
                           color: Theme.of(context).primaryColor,
                         )),
                     SizedBox(width: 12.0),
                     Expanded(
                       child: TextField(
-                        style: TextStyle(color: textColor, fontSize: 14.0),
+                        style: TextStyle(color: textColor, fontSize: 16.0),
                         decoration: InputDecoration(
                             hintText: 'Search...',
                             hintStyle:
@@ -194,7 +196,7 @@ class Home extends StatelessWidget {
             // recents
             Expanded(
                 child: ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              padding: EdgeInsets.symmetric(horizontal: 12.0),
               itemCount: recentChats.length,
               itemBuilder: (BuildContext ctx, int index) =>
                   buildRecentChat(recentChats[index], context),

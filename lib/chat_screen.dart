@@ -52,7 +52,7 @@ class ChatScreen extends StatelessWidget {
           // nav
           Container(
             padding: const EdgeInsets.only(
-                left: 10.0, right: 10.0, top: 26.0, bottom: 10.0),
+                left: 12.0, right: 12.0, top: 26.0, bottom: 10.0),
             decoration: BoxDecoration(color: background, boxShadow: [
               BoxShadow(
                   color: darkShadow,
@@ -86,7 +86,7 @@ class ChatScreen extends StatelessWidget {
                       Text(sender.isOnline ? 'Online' : 'Offline',
                           style: TextStyle(
                             color: textColor.withOpacity(.54),
-                            fontSize: 12.0,
+                            fontSize: 14.0,
                           ))
                     ],
                   ),
@@ -102,14 +102,15 @@ class ChatScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: 12.0),
                 itemCount: messages.length,
+                reverse: true,
                 itemBuilder: (BuildContext context, index) =>
                     buildChat(messages[index], context)),
           ),
           Container(
             padding:
-                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
             decoration: BoxDecoration(color: background, boxShadow: [
               BoxShadow(
                   color: lightShadow,
@@ -133,7 +134,7 @@ class ChatScreen extends StatelessWidget {
                         boxShadow: softShadowsInvert,
                         borderRadius: BorderRadius.circular(30.0)),
                     child: TextField(
-                      style: TextStyle(color: textColor, fontSize: 14.0),
+                      style: TextStyle(color: textColor, fontSize: 16.0),
                       decoration: InputDecoration(
                           hintText: 'Aa',
                           hintStyle:
